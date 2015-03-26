@@ -5,21 +5,13 @@ name := "ScalaJS SJCL"
 
 normalizedName := "sjcl"
 
-version := "1.0.1"
+version := "1.0.2"
 
-scalaVersion := "2.11.5"
+scalaVersion := "2.11.6"
 
 organization := "edu.stanford.crypto"
 
 jsDependencies += ProvidedJS / "sjcl.js"
-
-credentials += {
-  val ivyHome = sys.props.get("sbt.ivy.home") match {
-    case Some(path) ⇒ file(path)
-    case None ⇒ Path.userHome / ".ivy2"
-  }
-  Credentials(ivyHome / ".credentials")
-}
 
 publishTo := {
   isSnapshot.value match {
